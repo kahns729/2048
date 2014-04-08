@@ -1,0 +1,19 @@
+{
+  "name": "2048-gamecenter",
+  "version": "0.0.0",
+  "description": "2048 Game Center",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^3.5.1",
+    "logfmt": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Seth Kahn",
+  "license": "ISC",
+  "engines": {
+    "node":"0.10.26"
+  }
+}
