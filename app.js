@@ -3,9 +3,6 @@ var app = express();
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.bodyParser());
-app.configure(function(){
-	app.use(express.static(__dirname + '/static'));
-});
 
 function sortDescending(scoresArray){
 	scoresArray.sort(function(entry1,entry2){
@@ -28,7 +25,7 @@ var mongoUri = process.env.MONGOLAB_URI ||
 	'mongodb://localhost/2048';
 
 app.get('/',function(request,response){
-	response.sendfile(__dirname + '/static/index.html');
+	response.sendfile(__dirname + '/index.html');
 });
 
 app.get('/scores.json',function(request,response){
