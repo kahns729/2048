@@ -81,19 +81,6 @@ app.post('/submit.json',function(request,response){
 	}
 });
 
-// app.get('/js',function(request,response){
-// 	var scoreList;
-// 	mongo.Db.connect(mongoUri, function(error, db){
-// 		db.collection('scores', function(err,collection){
-// 			collection.find().sort({ score: -1 }).toArray(function(err, items){
-// 				tosend = "function init(){console.log(" + items + ")};";
-
-// 				response.send(tosend);
-// 			});
-// 		});
-// 	});
-// });
-
 var port = Number(process.env.PORT || 3000);
 
 app.listen(port);
