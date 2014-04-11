@@ -73,7 +73,9 @@ app.post('/submit.json',function(request,response){
 				});
 			});
 		});
+		response.send();
 	}
+	response.send();
 });
 
 var port = Number(process.env.PORT || 3000);
