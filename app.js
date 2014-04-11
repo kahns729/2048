@@ -71,7 +71,7 @@ app.post('/submit.json',function(request,response){
 					"username":request.body.username,
 					"score":+request.body.score,
 					"grid":request.body.grid,
-					"created_at": new Date().getTime()
+					"created_at": new Date()
 				}
 				collection.insert(record, {safe:true}, function(er,records){
 					console.log("inserted new record");	
