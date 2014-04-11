@@ -3,12 +3,7 @@ var app = express();
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.bodyParser());
-
-function sortDescending(scoresArray){
-	scoresArray.sort(function(entry1,entry2){
-		return (+entry2.score) - (+entry1.score);
-	})
-}
+app.use(express.static(__dirname + '/static'));
 
 
 app.all('/*', function(req, res, next) {
@@ -31,7 +26,8 @@ app.get('/',function(request,response){
 		db.collection('scores', function(err,collection){
 			collection.find().sort({ score: -1 }).toArray(function(err, items){
 				if(!err){
-					indexPage += "<!DOCTYPE html><html><head><title>2048 Game Center</title></head><body><h1>"
+					indexPage += "<!DOCTYPE html><html><head><title>2048 Game Center</title><link rel='stylesheet'"
+					+ " type='text/css' href='home.css'></head><body><h1>"
 					+ "2048 Game Center</h1><table><tr><th>User</th><th>Score</th><th>Timestamp</th></tr>";
 					for (i = 0; i < items.length; i++){
 						indexPage += "<tr><td>" + items[i].username + "</td><td>" + items[i].score + 
