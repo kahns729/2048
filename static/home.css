@@ -1,3 +1,35 @@
-tr {
-	font-size:40px;
+body {
+	background-color: #2c3e50;
+}
+
+h1 {
+	color:white;
+	width:100%;
+	text-align: center;
+}
+
+#scores {
+	border-radius:20px;
+	padding:20px;
+	background-color:#2980b9;
+	color:white;
+	width:400px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+}
+
+table {
+	border-collapse:collapse;
+}
+
+table, th, td {
+	border:1px solid #34495e;
+}
+td {
+	width:50px;
+}
+
+.time {
+	width:290px;
 }

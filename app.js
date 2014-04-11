@@ -28,12 +28,12 @@ app.get('/',function(request,response){
 				if(!err){
 					indexPage += "<!DOCTYPE html><html><head><title>2048 Game Center</title><link rel='stylesheet'"
 					+ " type='text/css' href='static/home.css'></head><body><h1>"
-					+ "2048 Game Center</h1><table><tr><th>User</th><th>Score</th><th>Timestamp</th></tr>";
+					+ "2048 Game Center</h1><div id='scores'><table><tr><th>User</th><th>Score</th><th class = 'time'>Timestamp</th></tr>";
 					for (i = 0; i < items.length; i++){
 						indexPage += "<tr><td>" + items[i].username + "</td><td>" + items[i].score + 
-							"</td><td>" + items[i].created_at + "</td></tr>";
+							"</td><td class = 'time'>" + items[i].created_at + "</td></tr>";
 					}
-					indexPage += "</table></body></html>";
+					indexPage += "</table></div></body></html>";
 					response.send(indexPage);
 				}
 				else{};
