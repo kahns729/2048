@@ -74,7 +74,6 @@ app.post('/submit.json',function(request,response){
 					"created_at": new Date()
 				}
 				collection.insert(record, {safe:true}, function(er,records){
-					console.log("inserted new record");	
 				});
 			});
 		});
