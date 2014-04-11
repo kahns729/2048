@@ -3,7 +3,7 @@ var app = express();
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.bodyParser());
-app.use(express.static(__dirname + '/static'));
+app.use('/static', express.static(__dirname + '/static'));
 
 
 app.all('/*', function(req, res, next) {
@@ -27,7 +27,7 @@ app.get('/',function(request,response){
 			collection.find().sort({ score: -1 }).toArray(function(err, items){
 				if(!err){
 					indexPage += "<!DOCTYPE html><html><head><title>2048 Game Center</title><link rel='stylesheet'"
-					+ " type='text/css' href='home.css'></head><body><h1>"
+					+ " type='text/css' href='static/home.css'></head><body><h1>"
 					+ "2048 Game Center</h1><table><tr><th>User</th><th>Score</th><th>Timestamp</th></tr>";
 					for (i = 0; i < items.length; i++){
 						indexPage += "<tr><td>" + items[i].username + "</td><td>" + items[i].score + 
